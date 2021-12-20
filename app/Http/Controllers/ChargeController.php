@@ -51,7 +51,7 @@ class ChargeController extends Controller
      * @param int $id
      * @return Response
      */
-    public function show(int $id): Response
+    public function show(Request $request,int $id): Response
     {
         return response(Charge::find($id));
     }
