@@ -24,9 +24,9 @@ class AccountController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return Json
      */
-    public function store(Request $request): Response
+    public function store(Request $request)
     {
 
         $userId = Auth::id();
@@ -44,8 +44,8 @@ class AccountController extends Controller
             'balance' =>  $request->balance ?  $request->balance : 5000.00,  //setting default balance of 5000.00
             'type' => $request ->type,
             'user_id' => $userId
-        ]);    
-      return response(['message' => "Account created successfully", 'account' => $account]);
+        ]); 
+        return response()->json(['message'=>"Account created successfully", 'account' => $account],201);   
     }
 
     /**

@@ -51,7 +51,7 @@ class AuthController extends Controller
         $token = $user->createToken('apptoken')->plainTextToken;
 
         $response = ['user' => $user, 'token' => $token];
-        return response($response, Response::HTTP_ACCEPTED);
+        return response($response, 200);
     }
 
     public function logout(Request $request): Response

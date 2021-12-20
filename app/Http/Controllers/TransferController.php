@@ -27,7 +27,7 @@ class TransferController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return JSON
      */
     public function store(Request $request)
     {
@@ -94,7 +94,7 @@ class TransferController extends Controller
             ]);
         });
         
-      return response(['message' => "transfer created successfully", 'account' => $transfer]);
+        return response()->json(['message'=>"transfer created successfully", 'transfer' => $transfer],201);  
     }
 
     /**
