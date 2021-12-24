@@ -1,3 +1,12 @@
+### Run the project
+
+- Clone the project and cd in the main directory
+- cp .env.example .env
+- composer install && composer update
+- php artisan serve
+
+The project will open on localhost:8000
+
 
 ### Documentation
 

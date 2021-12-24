@@ -59,11 +59,11 @@ class TransferController extends Controller
         $subtraction = $data['amount'] + $charge['amount'];
         $account_sender = Account::where('account_number', $data['sender_account_number'])
                                    ->where('type',$data['sender_account_type'])
-                                   ->firstOrFail();
+                                   ->first();
 
         $account_destination = Account::where('account_number', $data['destination_account_number'])
                                    ->where('type',$data['destination_account_type'])
-                                   ->firstOrFail();
+                                   ->first();
 
         //check if sender has enough money in his account
         if($account_sender->balance < $data['amount']){
